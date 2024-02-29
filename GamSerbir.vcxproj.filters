@@ -116,5 +116,8 @@
     <ClInclude Include="VendingMachines.h">
       <Filter>File di intestazione\Game</Filter>
     </ClInclude>
+    <ClInclude Include="log.h">
+      <Filter>File di intestazione\Game</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
