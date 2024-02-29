@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -161,6 +161,7 @@
     <ClInclude Include="GameMode.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Looting.h" />
+    <ClInclude Include="LootLlama.h" />
     <ClInclude Include="misc.h" />
     <ClInclude Include="Pawn.h" />
     <ClInclude Include="PC.h" />
@@ -171,6 +172,7 @@
     <ClInclude Include="SpyGames.h" />
     <ClInclude Include="ue.h" />
     <ClInclude Include="Vehicles.h" />
+    <ClInclude Include="VendingMachines.h" />
     <ClInclude Include="Weapon.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
