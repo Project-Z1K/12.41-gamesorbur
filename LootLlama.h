@@ -1,11 +1,12 @@
 #pragma once
 #include "ue.h"
 #include "PlayerState.h"
+#include "log.h"
 
 float EvaluateCurveTableRow(UCurveTable* CurveTable, FName RowName, float InXY,
 	const FString& ContextString = FString(), EEvaluateCurveTableResult* OutResult = nullptr)
 {
-	/*static auto fn = StaticLoadObject<UFunction>("/Script/Engine.DataTableFunctionLibrary.EvaluateCurveTableRow");
+	static auto fn = StaticLoadObject<UFunction>("/Script/Engine.DataTableFunctionLibrary.EvaluateCurveTableRow");
 
 	float wtf{};
 	EEvaluateCurveTableResult wtf1{};
@@ -19,7 +20,7 @@ float EvaluateCurveTableRow(UCurveTable* CurveTable, FName RowName, float InXY,
 	if (OutResult)
 		*OutResult = UDataTableFunctionLibrary_EvaluateCurveTableRow_Params.OutResult;
 
-	return UDataTableFunctionLibrary_EvaluateCurveTableRow_Params.OutXY;*/
+	return UDataTableFunctionLibrary_EvaluateCurveTableRow_Params.OutXY;
 
 	float wtf{};
 	//EEvaluateCurveTableResult wtf1{};
@@ -52,12 +53,15 @@ static inline int CalcuateCurveMinAndMax(FScalableFloat Min, FScalableFloat Max,
 	float MaxSpawnPercent = EvaluateCurveTableRow(Max.Curve.CurveTable, Max.Curve.RowName, 0);
 }
 
+
 void SpawnLlamas()
 {
 	auto MapInfo = GetGameState()->MapInfo;
 	int AmountOfLlamasSpawned = 0;
 	//auto AmountOfLlamasToSpawn = CalcuateCurveMinAndMax(MapInfo->LlamaQuantityMin, MapInfo->LlamaQuantityMax, 1);
 	auto AmountOfLlamasToSpawn = 5;
+
+	log_info("Attempting to spawn %d llamas.\n", AmountOfLlamasToSpawn);
 
 	//FVector SpawnIslandLoc = { 179899, -176186, -2611 };
 
@@ -94,6 +98,8 @@ void SpawnLlamas()
 		//FTransform FinalSpawnTransform = InitialSpawnTransform;
 		//FinalSpawnTransform.Translation = GroundLocation;
 
+		log_debug("Spawning Llama #%d at %f %f %f\n", i, GroundLocation.X, GroundLocation.Y, GroundLocation.Z);
+
 		//GetStatics()->FinishSpawningActor(LlamaStart, FinalSpawnTransform);
 		auto Llama = SpawnActor<AFortAthenaSupplyDrop>(MapInfo->LlamaClass.Get(), GroundLocation, RandomYawRotator);
 
@@ -103,4 +109,6 @@ void SpawnLlamas()
 			continue;
 		AmountOfLlamasSpawned++;
 	}
+
+	log_info("Spawned %d llamas.\n", AmountOfLlamasSpawned);
 }
