@@ -39,6 +39,7 @@ void DadBroHealthTest()
 	}
 }
 
+
 void StartDadBro()
 {
 	UClass* DadBroPawnClass = StaticLoadObject<UClass>("/Game/Athena/DADBRO/DADBRO_Pawn.DADBRO_Pawn_C");
@@ -50,8 +51,6 @@ void StartDadBro()
 	Mutator->DadBroCodeState = EDadBroState::Active;
 	Mutator->OnRep_DadBroPawn();
 	Mutator->OnRep_DadBroCodeState();
-
-	new thread(DadBroHealthTest);
 }
 
 bool (*ReadyToStartMatchOG)(AFortGameModeAthena* GameMode);
