@@ -1,4 +1,8 @@
-# Eon-Gameserver
-Fuck you Eon.<br><br>
+# i have ben decided to add some shits to eon gs so
 
-<img src="https://github.com/hereswhisper/Eon-Gameserver/assets/123034075/c173e292-1e6c-4ee4-ad6a-0b8106d13ff0" />
+# shit i go add
+- llama looting
+- fixed
+- vending mechines
+- bet bosses code
+- some shit 
