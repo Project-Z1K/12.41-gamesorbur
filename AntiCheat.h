@@ -143,3 +143,10 @@ namespace AC {
 		}
 	}
 }
+
+
+void detectedasf
+{
+// well will code this in 2025
+	// detectionlever = smh here will see if i code it;
+}
